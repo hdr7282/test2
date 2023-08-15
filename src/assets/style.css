@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'vazir';
+    src: url('font/Vazir-Bold-FD-WOL.ttf') format('trutype'),
+    url('font/Vazir-Bold-FD-WOL.woff') format('woff');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*background-color: green;*/
+}
+
+.app{
+    width: 100%;
+    height: 100%;
+}
+
+.addUser{
+    margin: 200px auto;
+}
+.addUserForm{
+    width: 400px;
+    height: 880px;
+    background-color: #033ca6;
+    /*border: 5px solid black;*/
+    padding: 20px;
+    margin: 50px auto;
+}
+.addUserForm p{
+    text-align: center;
+    font-family: vazir;
+    color: #ff003b;
+}
+.addUserForm h1{
+    text-align: center;
+    display: block;
+    color: cornflowerblue;
+    margin-bottom: 50px;
+}
+.addUserForm input,.sex{
+    width: 90%;
+    height: 50px;
+    padding: 5px 10px;
+    outline: none;
+    margin: 5px auto 20px auto;
+    background-color: darkgray;
+    display: block;
+}
+.addUserForm label{
+    text-align: center;
+    font-family: vazir;
+    direction: rtl;
+}
+.addUserForm input[type=text],.sex{
+    direction: rtl;
+    font-family: vazir;
+    border-radius: 5px;
+}
+.sex label, select{
+    width: 70px;
+    height: 30px;
+    color: deepskyblue;
+    margin: 10px 5px;
+    outline: none;
+    font-size: 20px;
+}
+.user{
+    margin: 20px;
+    text-align: center;
+}
+.allUser{
+    width: 1200px;
+    margin: 50px auto;
+    /*background-color: red;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 5px solid black;
+}
+.allUserLabel{
+    text-align: center;
+    margin: 200px auto auto auto;
+    font-family: vazir;
+}
+
+.header{
+    width: 100%;
+    height: 150px;
+    background-color: deepskyblue;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+.navbar{
+    width: 100%;
+    height: 200px;
+    /*background-color: #ff003b;*/
+    display: flex;
+    justify-content: center;
+}
+.ulMenu{
+    width: 370px;
+    height: 40px;
+    /*background-color: #00ff16;*/
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.liMenu{
+    width: 120px;
+    height: 40px;
+    background-color: #838386;
+    list-style: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: vazir;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.liMenu:hover{
+    font-weight: bold;
+    /*color: coral;*/
+    background-color: #ff003b;
+    border-radius: 15px;
+    transition: 300ms all ease-in-out;
+}
+.linkMenu{
+    text-decoration: none;
+    color: white;
+}
+.submit{
+    color: #ff003b;
+    background-color: deepskyblue;
+    font-family: vazir;
+    font-weight: bold;
+    margin-top: 150px;
+    cursor: pointer;
+}
+
+.page404{
+    width: 100%;
+    height: 50vh;
+    margin: 200px auto 200px;
+    font-family: vazir;
+    font-size: larger;
+    text-align: center;
+}
+.page404 h1{
+    color: #ff003b;
+    font-size: 300px;
+    text-align: center;
+    /*background-color: #033ca6;*/
+}
+.page404 h3{
+    font-size: 50px;
+    text-align: center;
+    /*background-color: #033ca6;*/
+}
