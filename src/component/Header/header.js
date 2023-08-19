@@ -3,7 +3,7 @@ import Navbar from "./Navbar/navbar";
 
 function Header(){
     return(
-        <div className={'header'}>
+        <div className={'header w-100 bg-info'}>
             <Navbar/>
         </div>
     )

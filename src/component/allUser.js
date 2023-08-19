@@ -4,7 +4,7 @@ import User from "./user";
 function AllUser(props){
     console.log(props.userList)
     return(
-        <div className={'allUser'}>
+        <div className={'allUser d-flex justify-content-center w-75 mt-5 m-auto'}>
             {
                 props.userList.map((user, index)=>
                     <User

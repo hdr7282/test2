@@ -5,12 +5,13 @@ import * as yup from 'yup';
 import {number, string} from "yup";
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 let schema = yup.object().shape({
-    firstName: string().max(40, 'نام نباید بیشتر از 40 حرف باشد').min(4, 'نام باید بیشتر از 3 حرف باشد').required('نام کاربری نمیتواند خالی باشد'),
-    lastName: string().min(4,'نام باید بیشتر از 3 حرف باشد').max(40,'نام نباید بیشتر از 40 حرف باشد').required('نام خانوادگی نمیتواند خالی باشد'),
-    state: string().required('نام خانوادگی نمیتواند خالی باشد'),
-    phone: number().positive('عدد باید بیشتر از صفر باشد').integer().required('شماره موبایل نمیتواند خالی باشد'),
+    firstName: string().max(40).min(4, 'نام باید بیشتر از 3 حرف باشد').required(),
+    lastName: string().min(4, 'نام خانوادگی باید بیشتر از 3 حرف باشد').max(40).required(),
+    state: string().required('استان نمیتواند خالی باشد'),
+    phone: number().positive().integer().required(),
     sex: string().required('جنسیت را انتخاب کنید'),
     cod: number().positive('کد ملی باید بیشتر از 0 باشد').integer().min(10, 'کد ملی باید 10رقم باشد').required('کد ملی نمیتواند خالی باشد'),
     email: string().email().required('ایمیل نمیتواند خالی باشد')
@@ -32,30 +33,37 @@ function AddUser(){
     return(
         <div className={'addUser'}>
             <ToastContainer></ToastContainer>
-            <form className={'addUserForm'} onSubmit={handleSubmit(submitForm)}>
-                <h1>یوزر جدید</h1>
-                <p>{errors.firstName?.message}</p>
-                <input type="text" placeholder={'نام'} {...register('firstName')}/>
-                <p>{errors.lastName?.message}</p>
-                <input type="text" placeholder={'نام خانوادگی'} {...register('lastName')}/>
-                <p>{errors.state?.message}</p>
-                <input type="text" placeholder={'استان محل سکونت'} {...register('state')}/>
-                <p>{errors.phone?.message}</p>
-                <input type="number" placeholder={'شماره موبایل'} {...register('phone')}/>
-                <p>{errors.sex?.message}</p>
-                <div className={'sex'} {...register('sex')}>
-                    <label>جنسیت : </label>
+            <form className={'addUserForm w-50 m-auto text-center'} onSubmit={handleSubmit(submitForm)}>
+                <h1 className={'text-center'}>یوزر جدید</h1>
+
+                <input className={'w-75 p-3 bg-dark'} type="text" placeholder={'نام'} {...register('firstName')}/>
+                <p className={'text-center'}>{errors.firstName?.message}</p>
+
+                <input className={'w-75 p-3 bg-dark'} type="text" placeholder={'نام خانوادگی'} {...register('lastName')}/>
+                <p className={'text-center'}>{errors.lastName?.message}</p>
+
+                <input className={'w-75 p-3 bg-dark'} type="text" placeholder={'استان محل سکونت'} {...register('state')}/>
+                <p className={'text-center'}>{errors.state?.message}</p>
+
+                <input className={'w-75 p-3 bg-dark'} type="number" placeholder={'شماره موبایل'} {...register('phone')}/>
+                <p className={'text-center'}>{errors.phone?.message}</p>
+
+                <div className={'sex d-flex border w-75 align-items-center m-auto'} {...register('sex')}>
+                    <label>جنسیت </label>
                     <select name={'sexSelect'}>
-                        <option value={'مرد'}>مرد</option>
+                        <option className={'p-2'} value={'مرد'}>مرد</option>
                         <option value={'زن'}>زن</option>
                     </select>
                 </div>
-                <p>{errors.cod?.message}</p>
-                <input type="number" placeholder={'کد ملی'} {...register('cod')}/>
-                <p>{errors.email?.message}</p>
-                <input type="email" placeholder={'ایمیل'} {...register('email')}/>
+                <p className={'text-center'}>{errors.sex?.message}</p>
 
-                <input className={'submit btn btn-primary'} type={"submit"}/>
+                <input className={'w-75 p-3 bg-dark'} type="number" placeholder={'کد ملی'} {...register('cod')}/>
+                <p className={'text-center'}>{errors.cod?.message}</p>
+
+                <input className={'w-75 p-3 bg-dark'} type="email" placeholder={'ایمیل'} {...register('email')}/>
+                <p className={'text-center'}>{errors.email?.message}</p>
+
+                <input className={'submit btn btn-primary d-block w-75 mt-4 mb-5 m-auto'} type={"submit"}/>
             </form>
         </div>
     )

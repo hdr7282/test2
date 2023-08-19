@@ -10,7 +10,7 @@ const LazyAddUser = React.lazy(()=> import('../../component/add user'))
 
 function App(){
     return(
-        <div className={'app'}>
+        <div className={'w-100 vh-100'}>
 
             <BrowserRouter>
                 <Header/>
