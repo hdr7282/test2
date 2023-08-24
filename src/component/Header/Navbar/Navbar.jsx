@@ -3,7 +3,7 @@ import UlMenu from "./UlMenu/UlMenu";
 
 function Navbar(){
     return(
-        <nav className={'navbar1 d-flex align-items-center justify-content-center'}>
+        <nav className={'navbar navbar1 d-flex align-items-center justify-content-center'}>
             <UlMenu/>
         </nav>
     )

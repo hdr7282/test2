@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function LiMenu(props){
     return(
-        <li className={'liMenu'}>
+        <li className={'liMenu btn btn-primary'}>
             <Link className={'linkMenu'} to={props.link}>
                 {props.children}
             </Link>
